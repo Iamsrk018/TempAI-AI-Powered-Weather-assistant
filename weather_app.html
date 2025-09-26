@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>TempAI: AI-Powered Weather assistant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🌦️ Weather App</h1>
+      <p>Current weather where you are (or any city)</p>
+    </header>
+
+    <!-- Loading -->
+    <div class="card loading" id="loading">
+      <div class="spinner"></div>
+      <p>Loading…</p>
+    </div>
+
+    <!-- Error -->
+    <div class="card error" id="error" hidden>
+      <div class="error-emoji">⚠️</div>
+      <p id="errorText">Unable to fetch weather</p>
+      <div class="actions">
+        <button id="retryBtn">Retry</button>
+        <button id="manualBtn">Enter City</button>
+      </div>
+    </div>
+
+    <!-- Weather -->
+    <div class="card weather" id="weather" hidden>
+      <div class="top">
+        <h2 id="place">📍 —</h2>
+        <div class="main">
+          <div class="icon" id="icon">⛅</div>
+          <div class="temp-group">
+            <div class="temp" id="temp">--°C</div>
+            <div class="desc" id="desc">—</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats grid -->
+      <div class="grid">
+        <div class="mini-card">
+          <span>Feels like</span>
+          <strong id="feels">--°C</strong>
+        </div>
+        <div class="mini-card">
+          <span>Humidity</span>
+          <strong id="hum">--%</strong>
+        </div>
+        <div class="mini-card">
+          <span>Wind</span>
+          <strong id="wind">-- km/h</strong>
+        </div>
+        <div class="mini-card">
+          <span>Visibility</span>
+          <strong id="vis">-- km</strong>
+        </div>
+        <div class="mini-card">
+          <span>Pressure</span>
+          <strong id="press">-- hPa</strong>
+        </div>
+        <div class="mini-card">
+          <span>Clouds</span>
+          <strong id="cloud">--%</strong>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="refreshBtn">Refresh</button>
+        <button id="cityBtn">Search City</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating chat button -->
+  <button class="chat-toggle" id="chatToggle">💬</button>
+
+  <!-- Chatbot window -->
+  <div class="chatbot" id="chatbot" hidden>
+    <div class="chat-header">
+      <h3>Assistant</h3>
+      <button class="close-chat" id="closeChat">✕</button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="bot-msg">Hello 👋 How can I help you today?</div>
+    </div>
+    <form class="chat-input" id="chatForm">
+      <input type="text" id="chatText" placeholder="Type a message…" required />
+      <button type="submit">➤</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
