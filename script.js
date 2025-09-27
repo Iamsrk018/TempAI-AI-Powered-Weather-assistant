@@ -1,8 +1,8 @@
 // ===== Config =====
-const API_KEY = 'df895c75a3a96993fbcd35eda438e955'; // put your OpenWeather key or leave blank for mock
+const API_KEY = 'your api key'; // put your OpenWeather key or leave blank for mock
 const API_URL = 'https://api.openweathermap.org/data/2.5/weather';
 const IP_URL = 'https://ipapi.co/json/';
-const GEMINI_API_KEY = 'AIzaSyCa-ETMm5ttCJArsWlusM0_JXWQh2hLsVM'; // put your Gemini API key here
+const GEMINI_API_KEY = 'your gemini api key'; // put your Gemini API key here
 const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`;
 
 // Map OpenWeather icon code -> emoji
